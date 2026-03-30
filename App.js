@@ -166,7 +166,7 @@ export default function App() {
 
   return (
     <View style={styles.mainContainer}>
-      <StatusBar barStyle="light-content" backgroundColor="#1A1A1A" translucent={false} />
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true} />
       <View style={styles.headerBackground}>
         <View style={styles.header}>
           <MaterialCommunityIcons name="cube-outline" size={46} color={AMBER} style={styles.logo} />
@@ -315,7 +315,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    paddingTop: Platform.OS === 'ios' ? 40 : 5,
+    paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 40) + 10 : 50,
   },
   header: {
     paddingHorizontal: 25,
@@ -456,7 +456,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.5,
-    shadowRadius: 20,
+      shadowRadius: 20,
     elevation: 15,
   },
   modalItem: {
